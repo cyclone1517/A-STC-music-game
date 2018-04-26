@@ -1,0 +1,24 @@
+#define uint unsigned int
+#define uchar unsigned char
+
+uchar show_b[]={0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00};  	//barrier 8-bit segments show
+uchar show_f[]={0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00};  	//final 8-bit show
+uchar weixuan[]={0x00,0x01,0x02,0x03,0x04,0x05,0x06,0x07};	
+uchar show_led = 0x0f;
+
+uint gameState = 0;   // 0 going, 1 win, 2 lose
+uchar show_lose[]= {0x38,0x3f,0x6d,0x79,0x00,0x00,0x00,0x00};
+uchar show_vic[] = {0x3e,0x06,0x39,0x00,0x00,0x00,0x00,0x00};
+
+
+uint led = 0x1f;
+uint count=0, elidith=0;  //分频计数和消抖
+uint x,i=0,k=0;
+uint level = 1;
+uint delaytime = 530;		//initial digital tube shift time
+uint mudltime = 1000, n=0;
+uint divpo = 0,point = 0;
+uint divcontrol = 0;
+
+uchar next = 0x00; 
+/*Queue can't work for music time is the main line, the digital display line can only be delayed but not put forward*/
